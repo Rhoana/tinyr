@@ -504,7 +504,7 @@ cdef class RTree(object):
 
     cdef inline int insert_at_node(self, _Record r, _Node L) except -1:
         cdef:
-            _Node LL
+            _Node LL = None
     
         if self.is_full(L):
             LL = self.SplitNode(L, r)
